@@ -1,4 +1,5 @@
-## pgEdit TextMate
+pgEdit TextMate
+=============
 
 pgEdit is a [TextMate](http://macromates.com/) bundle for working with
 [PostgreSQL](http://www.postgresql.org/) relational databases. It supports
