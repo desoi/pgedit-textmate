@@ -2,14 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>version</key>
-	<string>2.0.1</string>
+	<key>contactEmailRot13</key>
+	<string>qrfbv@ctrqvg.pbz</string>
 	<key>contactName</key>
 	<string>John DeSoi, Ph.D.</string>
-	<key>webSite</key>
-	<string>http://pgedit.com</string>
 	<key>description</key>
-	<string>Support for &lt;a href=&quot;http://postgresql.org&quot;&gt;PostgreSQL&lt;/a&gt;.</string>
+	<string>Support for &lt;a href="http://postgresql.org"&gt;PostgreSQL&lt;/a&gt;.</string>
 	<key>mainMenu</key>
 	<dict>
 		<key>items</key>
@@ -66,5 +64,9 @@
 	</array>
 	<key>uuid</key>
 	<string>6FAB28A0-5DA8-4D1B-B795-BBDED44EE37F</string>
+	<key>version</key>
+	<string>2.2.0</string>
+	<key>webSite</key>
+	<string>http://pgedit.com</string>
 </dict>
 </plist>
