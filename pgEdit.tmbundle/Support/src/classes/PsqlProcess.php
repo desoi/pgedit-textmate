@@ -46,7 +46,7 @@ class PsqlProcess
 	 * @param $show_output
 	 * If false, output is not displayed and can be retrieved with the get_output() method.
 	 */
-	function __construct($connection, $input='', $single_statement=false, $show_output=true) {
+	function __construct($connection, $input = '', $single_statement = false, $show_output = true) {
 		global $env;
 		$this->connection = $connection;
 		$this->show_output = $show_output;
@@ -60,7 +60,7 @@ class PsqlProcess
 		if ($this->single_statement = $single_statement && !$this->file_exec) {
 			// assumes caller trimmed the input; \\x is for psql describe and other commands that output tables
 			// $this->select1 = preg_match('/^(select |[\\]d[\S]*)/i', $input);
-			if (substr($input, 0, 2) == '\\d') $this->select1 = true; // psql describe command
+			if (substr($input, 0, 2) == '\\d') $this->select1 = $show_output; // psql describe command from user
 			else $this->select1 = preg_match('/^(select|table|with)\s/i', $input);
 			$this->exec1 = !$this->select1;
 			$this->statement = $input;

@@ -16,9 +16,9 @@ $stmt = tm_stdin();
 
 $schema_object_regex = pg_schema_object_regex;
 
-// Update this for new versiosn by paging through the CREATE commands in the postgres documentation.
+// Update this for new versions by paging through the CREATE commands in the postgres documentation.
 $types = 'AGGREGATE|CAST|CONSTRAINT\s+TRIGGER|CONVERSION|DATABASE|DOMAIN|FOREIGN\s+DATA\s+WRAPPER|FUNCTION|GROUP|INDEX|LANGUAGE|OPERATOR|OPERATOR\s+CLASS|OPERATOR\s+FAMILY|ROLE|RULE|SCHEMA|SEQUENCE|SERVER|TABLE|TABLESPACE|TEXT\s+SEARCH\s+CONFIGURATION|TEXT\s+SEARCH\s+DICTIONARY|TEXT\s+SEARCH\s+PARSER|TEXT\s+SEARCH\s+TEMPLATE|TRIGGER|TYPE|USER|USER\s+MAPPING|VIEW';
-$keys = 'AUTHORIZATION|CONCURRENTLY|DEFAULT|GLOBAL|OR|LOCAL|PROCEDURAL|REPLACE|TEMPORARY|TEMP|TRUSTED|UNIQUE';
+$keys = 'AUTHORIZATION|CONCURRENTLY|DEFAULT|GLOBAL|OR|LOCAL|PROCEDURAL|REPLACE|TEMPORARY|TEMP|TRUSTED|UNIQUE|UNLOGGED';
 $regex = "/^CREATE\s+(?:(?:$keys)\s+)*($types)\s+(\(|$schema_object_regex)/i"; // last capture is open paren or name (cast has no name)
 $match = array();
 if (!preg_match($regex, $stmt, $match)) {

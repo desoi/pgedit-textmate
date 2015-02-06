@@ -27,7 +27,7 @@ if (!$pos || trim(substr($line, 0, $pos)) == '') {
 	$conn = file_connection();
 	$cmd = "\\dd $word*\n\\df $word*\n\\dtv $word*"; // object, functions, tables/views; dd only shows things with comments
 	$psql = new PsqlProcess($conn, $cmd, true, false); 
-	$out = $psql->get_output();
+	$out = $psql->get_output(); $res = $out;
 	$matches = array();
 	// all must return a table with schema and name as the first two columns
 	if (preg_match_all('/^[^|]*\| ([^|]*\S) +\|.*$/im', $out, $pmatch)) $matches = array_unique($pmatch[1]);

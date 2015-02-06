@@ -24,13 +24,11 @@ class Session
 	
 	/**
 	 * Return the file path of the session file.
-	 *
-	 * Currently, this appends the TM PID which could theoretically be the same for a second launch.
-	 * Maybe revisit later, but should be good enough for now assuming temp files get cleaned up.
 	 */
 	private static function path () {
+    global $env;
 		if (!isset(self::$path)) {
-			self::$path = '/tmp/com.pgedit.session.' . posix_getppid();
+			self::$path = '/tmp/com.pgedit.session.' . $env['TM_PID'];
 		}
 		return self::$path;
 	}
