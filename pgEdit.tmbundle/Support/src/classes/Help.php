@@ -35,7 +35,8 @@ class Help
 		// dest does not exist or needs updating because source is newer
 		if ($src_stamp && (!$dest_stamp || ($src_stamp > $dest_stamp))) {
 			$doc = file_get_contents($src);
-			preg_match_all('/<dt\s*><a\s*href="(.+)"\s*>(.*)<\/a\s*>.*<\/dt\s*>/im', $doc, $match);
+			// preg_match_all('/<dt\s*><a\s*href="(.+)"\s*>(.*)<\/a\s*>.*<\/dt\s*>/im', $doc, $match);
+      preg_match_all('/<span class="refentrytitle"><a href="([^"]+)">([0-9a-zA-Z ]+)<\/a><\/span>/im', $doc, $match);
 			$files = $match[1];
 			$names = $match[2];
 			if (is_array($files) && is_array($names)) {
